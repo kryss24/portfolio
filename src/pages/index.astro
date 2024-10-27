@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const featuredProjects = [
+	{
+		title: 'E-commerce Platform',
+		description: 'Une plateforme e-commerce complète avec panier, paiement et gestion des commandes',
+		image: 'https://via.placeholder.com/800x400',
+		tags: ['React', 'Node.js', 'MongoDB'],
+		href: '/projects/ecommerce',
+	},
+	{
+		title: 'Application de Gestion',
+		description: 'Système de gestion interne pour une entreprise de logistique',
+		image: 'https://via.placeholder.com/800x400',
+		tags: ['Vue.js', 'Express', 'PostgreSQL'],
+		href: '/projects/gestion',
+	},
+];
+---
+
+<Layout title="Portfolio - Développeur Full Stack">
+	<main class="bg-white dark:bg-gray-900">
+		<!-- Hero Section -->
+		<section class="min-h-screen flex items-center justify-center text-center px-4 pt-20">
+			<div>
+				<img
+					src="https://via.placeholder.com/150"
+					alt="Photo de profil"
+					class="w-32 h-32 rounded-full mx-auto mb-8"
+				/>
+				<h1 class="text-5xl font-bold mb-6">
+					Développeur <span class="text-gradient">Full Stack</span>
+				</h1>
+				<p class="text-xl mb-8 max-w-2xl mx-auto dark:text-gray-300">
+					Passionné par le développement web avec 3 ans d'expérience dans la création d'applications
+					modernes et performantes.
+				</p>
+				<div class="flex gap-4 justify-center">
+					<Button href="/projects">Voir mes projets</Button>
+					<Button href="/contact" variant="secondary">Me contacter</Button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Featured Projects -->
+		<section class="max-w-6xl mx-auto px-4 py-20">
+			<h2 class="text-3xl font-bold mb-12 text-center">Projets récents</h2>
+			<div class="grid md:grid-cols-2 gap-8">
+				{featuredProjects.map((project) => <ProjectCard {...project} />)}
+			</div>
+			<div class="text-center mt-12">
+				<Button href="/projects" variant="secondary">Voir tous les projets</Button>
+			</div>
+		</section>
+
+		<!-- Skills Section -->
+		<section class="max-w-6xl mx-auto px-4 py-20 bg-gray-50 dark:bg-gray-800">
+			<h2 class="text-3xl font-bold mb-12 text-center">Compétences</h2>
+			<div class="grid md:grid-cols-3 gap-8">
+				<div class="text-center">
+					<h3 class="text-xl font-bold mb-4">Front-end</h3>
+					<ul class="space-y-2">
+						<li>React / Vue.js</li>
+						<li>TypeScript</li>
+						<li>Tailwind CSS</li>
+						<li>HTML5 / CSS3</li>
+					</ul>
+				</div>
+				<div class="text-center">
+					<h3 class="text-xl font-bold mb-4">Back-end</h3>
+					<ul class="space-y-2">
+						<li>Node.js</li>
+						<li>Express</li>
+						<li>PostgreSQL</li>
+						<li>MongoDB</li>
+					</ul>
+				</div>
+				<div class="text-center">
+					<h3 class="text-xl font-bold mb-4">Outils</h3>
+					<ul class="space-y-2">
+						<li>Git</li>
+						<li>Docker</li>
+						<li>CI/CD</li>
+						<li>AWS</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
