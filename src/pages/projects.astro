@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Exemple de données de projets
+const projects = [
+  {
+    title: "Projet 1",
+    description: "Description du projet 1.",
+    link: "https://lienversprojet1.com",
+  },
+  {
+    title: "Projet 2",
+    description: "Description du projet 2.",
+    link: "https://lienversprojet2.com",
+  },
+  {
+    title: "Projet 3",
+    description: "Description du projet 3.",
+    link: "https://lienversprojet3.com",
+  },
+];
+---
+
+<Layout title="Mes Projets">
+  <main class="bg-white dark:bg-gray-900">
+    <section class="max-w-6xl mx-auto px-4 py-20">
+      <h1 class="text-4xl font-bold mb-6 text-center">Mes Projets</h1>
+      <p class="text-xl mb-8 max-w-2xl mx-auto dark:text-gray-300">
+        Voici un aperçu de mes projets récents. Cliquez sur chaque projet pour en savoir plus.
+      </p>
+
+      <div class="space-y-8">
+        {projects.map(project => (
+          <div class="border rounded-lg p-6 shadow-md">
+            <h2 class="text-2xl font-bold">{project.title}</h2>
+            <p class="text-gray-700">{project.description}</p>
+            <a href={project.link} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Voir le projet</a>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>

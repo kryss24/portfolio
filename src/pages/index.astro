@@ -1,30 +1,44 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Button from '../components/Button.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 
 const featuredProjects = [
 	{
-		title: 'E-commerce Platform',
-		description: 'Une plateforme e-commerce complète avec panier, paiement et gestion des commandes',
-		image: 'https://via.placeholder.com/800x400',
-		tags: ['React', 'Node.js', 'MongoDB'],
-		href: '/projects/ecommerce',
+		title: "Application de Gestion",
+		description:
+			"Une plateforme e-commerce complète avec panier, paiement et gestion des commandes",
+		image: "https://via.placeholder.com/800x400",
+		tags: ["HTML", "BootStrap", "JavaScript", "Spring Boot"],
+		href: "/projects/gestion",
 	},
 	{
-		title: 'Application de Gestion',
-		description: 'Système de gestion interne pour une entreprise de logistique',
-		image: 'https://via.placeholder.com/800x400',
-		tags: ['Vue.js', 'Express', 'PostgreSQL'],
-		href: '/projects/gestion',
+		title: "Application Immobiliere",
+		description:
+			"Système de gestion des appartements dans une localiter",
+		image: "assets/images/immob.png",
+		tags: ["HTML", "CSS", "JavaScript", "PHP"],
+		href: "https://immob.42web.io",
 	},
 ];
 ---
 
+<style>
+	.project-card {
+		transition: transform 0.3s ease; /* Ajoute une transition douce */
+	}
+
+	.project-card:hover {
+		transform: scale(1.05); /* Agrandit l'image de 5% au survol */
+	}
+</style>
+
 <Layout title="Portfolio - Développeur Full Stack">
 	<main class="bg-white dark:bg-gray-900">
 		<!-- Hero Section -->
-		<section class="min-h-screen flex items-center justify-center text-center px-4 pt-20">
+		<section
+			class="min-h-screen flex items-center justify-center text-center px-4 pt-20"
+		>
 			<div>
 				<img
 					src="assets/images/profile.jpg"
@@ -36,29 +50,41 @@ const featuredProjects = [
 					Développeur <span class="text-gradient">Full Stack</span>
 				</h1>
 				<p class="text-xl mb-8 max-w-2xl mx-auto dark:text-gray-300">
-					Passionné par le développement web avec 3 ans d'expérience dans la création d'applications
-					modernes et performantes.
+					Passionné par le développement web avec 3 ans d'expérience
+					dans la création d'applications modernes et performantes.
 				</p>
 				<div class="flex gap-4 justify-center">
 					<Button href="/projects">Voir mes projets</Button>
-					<Button href="/contact" variant="secondary">Me contacter</Button>
+					<Button href="/Contact" variant="secondary"
+						>Me contacter</Button
+					>
 				</div>
 			</div>
 		</section>
 
 		<!-- Featured Projects -->
 		<section class="max-w-6xl mx-auto px-4 py-20">
-			<h2 class="text-3xl font-bold mb-12 text-center">Projets récents</h2>
+			<h2 class="text-3xl font-bold mb-12 text-center">
+				Projets récents
+			</h2>
 			<div class="grid md:grid-cols-2 gap-8">
-				{featuredProjects.map((project) => <ProjectCard {...project} />)}
+				{
+					featuredProjects.map((project) => (
+						<ProjectCard {...project} />
+					))
+				}
 			</div>
 			<div class="text-center mt-12">
-				<Button href="/projects" variant="secondary">Voir tous les projets</Button>
+				<Button href="/projects" variant="secondary"
+					>Voir tous les projets</Button
+				>
 			</div>
 		</section>
 
-		<!-- Skills Section -->
-		<section class="max-w-6xl mx-auto px-4 py-20 bg-gray-50 dark:bg-gray-800">
+		<!-- Skills Section
+		<section
+			class="max-w-6xl mx-auto px-4 py-20 bg-gray-50 dark:bg-gray-800"
+		>
 			<h2 class="text-3xl font-bold mb-12 text-center">Compétences</h2>
 			<div class="grid md:grid-cols-3 gap-8">
 				<div class="text-center">
@@ -89,6 +115,39 @@ const featuredProjects = [
 					</ul>
 				</div>
 			</div>
-		</section>
+		</section> -->
 	</main>
+
+	<!-- Skills Section -->
+	<section class="max-w-6xl mx-auto px-4 py-20 bg-gray-50 dark:bg-gray-800">
+		<h2 class="text-3xl font-bold mb-12 text-center">Compétences</h2>
+		<div class="grid md:grid-cols-3 gap-8">
+			<div class="text-center">
+				<h3 class="text-xl font-bold mb-4">Front-end</h3>
+				<ul class="space-y-2">
+					<li>React / Vue.js</li>
+					<li>TypeScript</li>
+					<li>HTML5 / CSS3</li>
+				</ul>
+			</div>
+			<div class="text-center">
+				<h3 class="text-xl font-bold mb-4">Back-end</h3>
+				<ul class="space-y-2">
+					<li>PHP</li>
+					<li>Laravel</li>
+					<li>Spring Boot</li>
+					<li>MySQL</li>
+					<li>Oracle</li>
+					<li>JAVA</li>
+				</ul>
+			</div>
+			<div class="text-center">
+				<h3 class="text-xl font-bold mb-4">Outils</h3>
+				<ul class="space-y-2">
+					<li>Git</li>
+					<li>Docker</li>
+				</ul>
+			</div>
+		</div>
+	</section>
 </Layout>
