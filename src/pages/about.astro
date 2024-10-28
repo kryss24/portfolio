@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="À propos - Portfolio">
+    <style>
+        img {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+        }
+    </style>
+	<main class="max-w-4xl mx-auto px-4 pt-32">
+		<h1 class="text-4xl font-bold mb-8">À propos de moi</h1>
+		
+		<div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+			<img
+				src="assets/images/profile.jpg"
+				alt="Photo de profil"
+				class="rounded-lg shadow-lg"
+			/>
+			<div>
+				<p class="text-lg mb-4">
+					Développeur Full Stack passionné avec 3 ans d'expérience dans la création d'applications web modernes.
+					Je combine créativité et expertise technique pour donner vie à des projets innovants.
+				</p>
+				<p class="text-lg mb-4">
+					Spécialisé dans les technologies JavaScript modernes, je m'efforce de créer des expériences
+					utilisateur exceptionnelles tout en maintenant un code propre et maintenable.
+				</p>
+			</div>
+		</div>
+
+		<section class="mb-16">
+			<h2 class="text-2xl font-bold mb-6">Parcours professionnel</h2>
+			<div class="space-y-8">
+				<div class="border-l-4 border-purple-600 pl-4">
+					<h3 class="font-bold">Développeur Full Stack Senior</h3>
+					<p class="text-gray-600 dark:text-gray-300">Entreprise Tech | 2022 - Présent</p>
+					<p class="mt-2">
+						Développement d'applications web complexes, leadership technique d'équipe,
+						architecture de solutions.
+					</p>
+				</div>
+				<div class="border-l-4 border-purple-600 pl-4">
+					<h3 class="font-bold">Développeur Full Stack</h3>
+					<p class="text-gray-600 dark:text-gray-300">Startup Innovante | 2020 - 2022</p>
+					<p class="mt-2">
+						Création de fonctionnalités clés, optimisation des performances,
+						collaboration étroite avec les designers.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<h2 class="text-2xl font-bold mb-6">Formation</h2>
+			<div class="space-y-8">
+				<div class="border-l-4 border-purple-600 pl-4">
+					<h3 class="font-bold">Master en Informatique</h3>
+					<p class="text-gray-600 dark:text-gray-300">Université de Technologie | 2020</p>
+					<p class="mt-2">Spécialisation en développement web et architectures cloud</p>
+				</div>
+				<div class="border-l-4 border-purple-600 pl-4">
+					<h3 class="font-bold">Licence en Informatique</h3>
+					<p class="text-gray-600 dark:text-gray-300">Université de Technologie | 2018</p>
+					<p class="mt-2">Formation généraliste en informatique</p>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>

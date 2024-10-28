@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const articles = [
+	{
+		title: 'Les meilleures pratiques en React en 2024',
+		description: 'Découvrez les dernières tendances et bonnes pratiques pour développer des applications React modernes.',
+		date: '2024-01-15',
+		readTime: '5 min',
+		category: 'React',
+		href: '/blog/react-best-practices-2024',
+	},
+	{
+		title: 'Introduction à Astro',
+		description: 'Pourquoi Astro est devenu mon framework préféré pour les sites statiques.',
+		date: '2024-01-10',
+		readTime: '4 min',
+		category: 'Astro',
+		href: '/blog/introduction-astro',
+	},
+	{
+		title: 'L\'importance du SEO pour les développeurs',
+		description: 'Comment optimiser vos applications web pour les moteurs de recherche.',
+		date: '2024-01-05',
+		readTime: '6 min',
+		category: 'SEO',
+		href: '/blog/seo-for-developers',
+	},
+];
+---
+
+<Layout title="Blog - Portfolio">
+	<main class="max-w-4xl mx-auto px-4 pt-32">
+		<h1 class="text-4xl font-bold mb-8">Blog</h1>
+		<p class="text-xl mb-12">
+			Découvrez mes articles sur le développement web, les nouvelles technologies et les bonnes pratiques.
+		</p>
+
+		<div class="space-y-12">
+			{articles.map((article) => (
+				<article class="border-b border-gray-200 dark:border-gray-700 pb-8">
+					<div class="flex items-center gap-4 mb-4">
+						<span class="text-sm text-gray-600 dark:text-gray-400">{article.date}</span>
+						<span class="text-sm text-gray-600 dark:text-gray-400">·</span>
+						<span class="text-sm text-gray-600 dark:text-gray-400">{article.readTime}</span>
+						<span class="px-2 py-1 text-sm bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full">
+							{article.category}
+						</span>
+					</div>
+					<h2 class="text-2xl font-bold mb-4">
+						<a href={article.href} class="hover:text-purple-600">{article.title}</a>
+					</h2>
+					<p class="text-gray-600 dark:text-gray-300 mb-4">{article.description}</p>
+					<a href={article.href} class="text-purple-600 hover:text-purple-700 font-medium">
+						Lire la suite →
+					</a>
+				</article>
+			))}
+		</div>
+	</main>
+</Layout>
